@@ -156,9 +156,7 @@ function approaching(particle, otherParticle){
 
 function ballCollision(particle, otherParticle){
     if(getDistance(particle, otherParticle) < particle.radius + otherParticle.radius){
-        console.log("collision");
         if(approaching(particle, otherParticle)){
-            console.log("collision1");
             tempdx1 = particle.dx*(particle.mass-otherParticle.mass)+(2*otherParticle.mass*otherParticle.dx)/(particle.mass+otherParticle.mass)
             tempdy1 = particle.dy*(particle.mass-otherParticle.mass)+(2*otherParticle.mass*otherParticle.dx)/(particle.mass+otherParticle.mass)
             tempdx2 = otherParticle.dx*(otherParticle.mass-particle.mass)+(2*particle.mass*particle.dx)/(particle.mass+otherParticle.mass)
