@@ -4,6 +4,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 var c = canvas.getContext('2d');
+var w = 300;
 
 // var par1 = new Particle(100, 200, 4, -4, 80, "blue");
 // var par2 = new Particle(500, 400, -3, 3, 100, "black");
@@ -36,7 +37,13 @@ function init(){
 
     particles = [];
 
-    for(let i = 0; i < 300; i++){
+    if(canvas.height < canvas.width){
+        w = canvas.height/3;
+    } else {
+        w = canvas.width/3;
+    }
+
+    for(let i = 0; i < w; i++){
         let temp;
         do {
             let radius = 10;
